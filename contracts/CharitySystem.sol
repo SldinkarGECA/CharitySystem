@@ -26,10 +26,10 @@ contract CharitySystem {
         address payable store;
         bool complete;
         uint256 approvalCount;
-        mapping(address => bool) approvals;
+        bool approved;
         bool display;
     }
-
+    
     // Co operative store structure
     struct CoopStore {
         string StoreName;
@@ -159,7 +159,7 @@ contract CharitySystem {
         _;
     }) */
     function donateVote() public payable {
-        require(msg.value > minContr);
+        // require(msg.value > minContr);
 
         approvers[msg.sender] = true;
         approversCount++;
@@ -183,9 +183,9 @@ contract CharitySystem {
         Beneficiary storage request = beneficiaries[index];
 
         require(approvers[msg.sender]);
-        require(!request.approvals[msg.sender]);
+        // require(!request.approvals[msg.sender]);
 
-        request.approvals[msg.sender] = true;
+        request.approved= true;
         request.approvalCount++;
     }
 
@@ -208,13 +208,9 @@ contract CharitySystem {
         payments.push(p);
     }
 
-    // function getBeneficiaries() public view returns (Beneficiary[] ben) {
-    //     Beneficiary[] memory _beneficiary = new Beneficiary[](ben.length);
-    // for (uint i = 0; i < ben.length; i++) {
-    //     _beneficiary[i] = ben[i];
-    // }
-    // return _beneficiary;
-    // }
+    function getBeneficiaries() public view returns (Beneficiary[] memory) {
+    return beneficiaries;
+    }
 
     //Product Methods
     function addProduct(
