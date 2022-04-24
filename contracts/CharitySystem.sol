@@ -67,6 +67,7 @@ contract CharitySystem {
     uint256 public approversCount;
     mapping(string => Product) products;
     Product[] public allProducts;
+    address public manager;
 
     constructor() {
         charityOrgs.push(
@@ -86,6 +87,7 @@ contract CharitySystem {
             msg.sender
         );
         CooperativeStores.push(co);
+        manager = msg.sender;
     }
 
     //CHARITY ORG METHODS
