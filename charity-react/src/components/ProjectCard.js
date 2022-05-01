@@ -6,7 +6,7 @@ function ProjectCard(props) {
         <div className="card-body">
           <h3 className="card-title">{props.title}</h3>
           <p className="card-text">{props.description}</p>
-          <div class="d-grid d-md-flex justify-content-center">
+          <div class="d-grid d-md-flex justify-content-left">
             <button type="button" className="btn btn-success btn-lg ">
               Donate Now!
             </button>
