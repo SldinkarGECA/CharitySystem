@@ -21,6 +21,7 @@ contract CharitySystem {
 
     // Benificiary Structure
     struct Beneficiary {
+        string title;
         string description;
         uint256 maxContr;
         address payable store;
@@ -29,7 +30,7 @@ contract CharitySystem {
         bool approved;
         bool display;
     }
-    
+
     // Co operative store structure
     struct CoopStore {
         string StoreName;
@@ -88,6 +89,42 @@ contract CharitySystem {
         );
         CooperativeStores.push(co);
         manager = msg.sender;
+        beneficiaries.push(
+            Beneficiary(
+                "Sample Project Meal",
+                "Mission: 10 Million Meals is an endeavor to deliver 10 million mid-day meals to school children in one year. All it takes is 2,000 donors commiting to donate 2000 every month and 43,000 hungry children can be fed one hot meal every school day  in 19 states across India.",
+                300,
+                payable(msg.sender),
+                false,
+                1,
+                true,
+                true
+            )
+        );
+        beneficiaries.push(
+            Beneficiary(
+                "Sample Project Education",
+                "Education is fundamental right for all children, but girls from impoverished, illiterate families are mostly denied this right in India. By the time they reach adolescence, 40% are out of school, kept at home doing ghousehold chores. Join Mission: Every Girl in School and support the education of thousands of girls. 600/month can make a huge difference to one girl life.",
+                300,
+                payable(msg.sender),
+                false,
+                1,
+                true,
+                true
+            )
+        );
+        beneficiaries.push(
+            Beneficiary(
+                "Sample Mission Oxygen",
+                "Mission Oxygen is an initiative of the Democratic People Foundation. We have partnered with United Way India to enable people from outside India to contribute to the cause.",
+                300,
+                payable(msg.sender),
+                false,
+                1,
+                true,
+                true
+            )
+        );
     }
 
     //CHARITY ORG METHODS
@@ -166,16 +203,18 @@ contract CharitySystem {
     }
 
     function createRequest(
+        string memory title,
         string memory description,
-        uint256 maxContr,
-        address store
+        uint256 maxContr
     ) public {
         Beneficiary storage newRequest = beneficiaries.push();
+        newRequest.title = title;
         newRequest.description = description;
         newRequest.maxContr = maxContr;
-        newRequest.store = payable(store);
+        newRequest.store = payable(msg.sender);
         newRequest.complete = false;
         newRequest.approvalCount = 0;
+        newRequest.approved = false;
         newRequest.display = false;
     }
 
@@ -185,7 +224,7 @@ contract CharitySystem {
         require(approvers[msg.sender]);
         // require(!request.approvals[msg.sender]);
 
-        request.approved= true;
+        request.approved = true;
         request.approvalCount++;
     }
 
@@ -209,7 +248,7 @@ contract CharitySystem {
     }
 
     function getBeneficiaries() public view returns (Beneficiary[] memory) {
-    return beneficiaries;
+        return beneficiaries;
     }
 
     //Product Methods

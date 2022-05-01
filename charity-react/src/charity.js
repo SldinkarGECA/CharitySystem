@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address = "0x5d5f91fa2AE6Ce73D64889927f36ceBcB1A7536c";
+const address = "0x1C9198bc21C3726294d6Fb1A0151f4C44C5597bB";
 const abi = [
   {
     inputs: [],
@@ -113,11 +113,13 @@ const abi = [
     inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     name: "beneficiaries",
     outputs: [
+      { internalType: "string", name: "title", type: "string" },
       { internalType: "string", name: "description", type: "string" },
       { internalType: "uint256", name: "maxContr", type: "uint256" },
       { internalType: "address payable", name: "store", type: "address" },
       { internalType: "bool", name: "complete", type: "bool" },
       { internalType: "uint256", name: "approvalCount", type: "uint256" },
+      { internalType: "bool", name: "approved", type: "bool" },
       { internalType: "bool", name: "display", type: "bool" },
     ],
     stateMutability: "view",
@@ -140,15 +142,15 @@ const abi = [
   },
   {
     inputs: [
+      { internalType: "string", name: "title", type: "string" },
       { internalType: "string", name: "description", type: "string" },
       { internalType: "uint256", name: "maxContr", type: "uint256" },
-      { internalType: "address", name: "store", type: "address" },
     ],
     name: "createRequest",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
-    signature: "0x8a9cfd55",
+    signature: "0x23fe79b8",
   },
   {
     inputs: [
@@ -206,6 +208,31 @@ const abi = [
     type: "function",
     constant: true,
     signature: "0x02ee3a52",
+  },
+  {
+    inputs: [],
+    name: "getBeneficiaries",
+    outputs: [
+      {
+        components: [
+          { internalType: "string", name: "title", type: "string" },
+          { internalType: "string", name: "description", type: "string" },
+          { internalType: "uint256", name: "maxContr", type: "uint256" },
+          { internalType: "address payable", name: "store", type: "address" },
+          { internalType: "bool", name: "complete", type: "bool" },
+          { internalType: "uint256", name: "approvalCount", type: "uint256" },
+          { internalType: "bool", name: "approved", type: "bool" },
+          { internalType: "bool", name: "display", type: "bool" },
+        ],
+        internalType: "struct CharitySystem.Beneficiary[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+    constant: true,
+    signature: "0x913b722c",
   },
   {
     inputs: [],
@@ -303,7 +330,6 @@ const abi = [
     payable: true,
     signature: "0xc9d6dadf",
   },
-  { inputs: [], name: "manager", e: true, signature: "0xc9d6dadf" },
   {
     inputs: [],
     name: "manager",
