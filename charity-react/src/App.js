@@ -5,10 +5,9 @@ import Products from "./components/Products";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
-  
-
   return (
     <div className="container-fluid">
       <Navbar>
@@ -18,6 +17,7 @@ function App() {
           <Route path="/products" element={<Products />} />
         </Routes>
       </Navbar>
+      <Footer />
     </div>
   );
 }
