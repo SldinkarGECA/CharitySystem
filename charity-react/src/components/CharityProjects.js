@@ -10,15 +10,20 @@ function CharityProjects(props) {
             setCharityProjects(await charity.methods.getBeneficiaries().call());
             console.log(charityProjects);
         };
-        loadContractFunctions();
+        const intervalId = setInterval(() => {
+            loadContractFunctions();
+        }, 1000 * 0) // in milliseconds
+        return () => clearInterval(intervalId)
+
     });
     return (
         <div className="row">
             {charityProjects.map((charityProject) => (
                 <ProjectCard
+                    key={charityProject["title"]}
                     description={charityProject["description"]}
                     title={charityProject["title"]}
-                    maxContr = {charityProject["maxContr"]}
+                    maxContr={charityProject["maxContr"]}
                 />
             ))}
         </div>
