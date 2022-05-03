@@ -13,11 +13,12 @@ function App() {
         <div className="container-fluid">
             <Navbar>
                 <Routes>
-                    <Route path="" element={<Home/>}/>
-                    <Route path="/CharityProjects" element={<CharityProjects/>}/>
-                    <Route path="/donors" element={<Donors/>}/>
-                    <Route path="/products" element={<Products/>}/>
-                    <Route path="/stores" element={<Stores/>}/>
+                    <Route exact path="" element={<Home/>}/>
+                    <Route exact path="/CharityProjects" element={<CharityProjects/>}/>
+                    <Route exact path="/donors" element={<Donors/>}/>
+                    <Route exact path="/products" element={<Products/>}/>
+                    <Route exact path="/stores" element={<Stores/>}/>
+                    <Route path="*" element={<Home/>}/>
                 </Routes>
             </Navbar>
             <Footer/>
