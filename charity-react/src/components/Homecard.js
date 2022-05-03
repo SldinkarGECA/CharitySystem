@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "../css/Home.css";
 function HomeCard(props) {
   return (
     <div className="px-4 py-4 my-auto col-lg-6 col-sm-12">

@@ -163,11 +163,11 @@ contract CharitySystem {
     ) public returns (uint256) {
         //constructor
         Donator memory d = Donator({
-            donatorName: _donatorName,
-            donatorMessage: _donatorMessage,
-            projectID: 1,
-            donatedValue: 10,
-            donatorAddress: msg.sender
+        donatorName : _donatorName,
+        donatorMessage : _donatorMessage,
+        projectID : 1,
+        donatedValue : 10,
+        donatorAddress : msg.sender
         });
         donators.push(d);
         return donators.length - 1;
