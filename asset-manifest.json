@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/CharitySystem/index.html/static/css/main.af41ec72.chunk.css",
-    "main.js": "/CharitySystem/index.html/static/js/main.d3b9d446.chunk.js",
-    "main.js.map": "/CharitySystem/index.html/static/js/main.d3b9d446.chunk.js.map",
-    "runtime-main.js": "/CharitySystem/index.html/static/js/runtime-main.8b2a33d3.js",
-    "runtime-main.js.map": "/CharitySystem/index.html/static/js/runtime-main.8b2a33d3.js.map",
-    "static/js/2.3b079673.chunk.js": "/CharitySystem/index.html/static/js/2.3b079673.chunk.js",
-    "static/js/2.3b079673.chunk.js.map": "/CharitySystem/index.html/static/js/2.3b079673.chunk.js.map",
+    "main.js": "/CharitySystem/index.html/static/js/main.dd1a58cb.chunk.js",
+    "main.js.map": "/CharitySystem/index.html/static/js/main.dd1a58cb.chunk.js.map",
+    "runtime-main.js": "/CharitySystem/index.html/static/js/runtime-main.18de5975.js",
+    "runtime-main.js.map": "/CharitySystem/index.html/static/js/runtime-main.18de5975.js.map",
+    "static/js/2.7a9668f1.chunk.js": "/CharitySystem/index.html/static/js/2.7a9668f1.chunk.js",
+    "static/js/2.7a9668f1.chunk.js.map": "/CharitySystem/index.html/static/js/2.7a9668f1.chunk.js.map",
     "index.html": "/CharitySystem/index.html/index.html",
     "static/css/main.af41ec72.chunk.css.map": "/CharitySystem/index.html/static/css/main.af41ec72.chunk.css.map",
-    "static/js/2.3b079673.chunk.js.LICENSE.txt": "/CharitySystem/index.html/static/js/2.3b079673.chunk.js.LICENSE.txt"
+    "static/js/2.7a9668f1.chunk.js.LICENSE.txt": "/CharitySystem/index.html/static/js/2.7a9668f1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8b2a33d3.js",
-    "static/js/2.3b079673.chunk.js",
+    "static/js/runtime-main.18de5975.js",
+    "static/js/2.7a9668f1.chunk.js",
     "static/css/main.af41ec72.chunk.css",
-    "static/js/main.d3b9d446.chunk.js"
+    "static/js/main.dd1a58cb.chunk.js"
   ]
 }
