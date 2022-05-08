@@ -10,7 +10,7 @@ function HomeCard(props) {
           <div class="d-grid d-sm-flex flex-row-reverse">
             <button
               type="button"
-              className="btn btn-light btn-sm border border-dark rcorners"
+              className="btn btn-secondary btn-sm border border-dark rcorners"
               onClick={props.onClick}
             >
               {props.button}

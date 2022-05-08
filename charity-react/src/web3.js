@@ -6,6 +6,8 @@ const provider = new HDWalletProvider(
   "wss://rinkeby.infura.io/ws/v3/51b2c9997e7a407a98ed41bd6ff16ba8"
 );
 
+// const provider = new Web3.providers.HttpProvider("http://localhost:8545");
+
 const web3 = new Web3(provider);
 
 export default web3;

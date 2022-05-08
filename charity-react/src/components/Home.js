@@ -15,7 +15,11 @@ function Home(props) {
       console.log(_manager);
     };
     loadContractFunctions();
-  });
+    const intervalId = setInterval(() => {
+      loadContractFunctions();
+    }, 1000 * 20); // in milliseconds
+    return () => clearInterval(intervalId);
+  }, [manager]);
 
   const navigate = useNavigate();
 
@@ -30,14 +34,14 @@ function Home(props) {
   };
 
   return (
-    <div>
-      <h1 className="display 2">Welcome !</h1>
-      <h1>Manager is {manager}</h1>
-      <h2>Address is {charity.options.address}</h2>
+    <div className="text-center">
+      <br />
+      <h1 className="display 2">Welcome to Genuine Charity System !</h1>
+      <br />
       <div className="d-flex justify-content-center">
         <HomeCard
-          description="To show all the donors all the charity projects available and to let them choose and vote for the ones convincing and agreeging with them"
-          title="For all the donours"
+          description="Know more about all the charity projects posted on our platform and join the great cause by donating them"
+          title="For all the donors"
           button="Projects"
           onClick={projectsPage}
         />
@@ -58,6 +62,8 @@ function Home(props) {
           onClick={beneficiariesPage}
         />
       </div>
+      <h6>Manager is {manager}</h6>
+      <h6>Address is {charity.options.address}</h6>
     </div>
   );
 }

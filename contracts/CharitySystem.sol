@@ -170,7 +170,7 @@ contract CharitySystem {
         donatorAddress : msg.sender
         });
         donators.push(d);
-        return donators.length - 1;
+        // return donators.length - 1;
     }
 
     function make_donations(uint256 id) public payable {
