@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/CharitySystem/static/css/main.af41ec72.chunk.css",
-    "main.js": "/CharitySystem/static/js/main.ce679f6d.chunk.js",
-    "main.js.map": "/CharitySystem/static/js/main.ce679f6d.chunk.js.map",
-    "runtime-main.js": "/CharitySystem/static/js/runtime-main.42806fc9.js",
-    "runtime-main.js.map": "/CharitySystem/static/js/runtime-main.42806fc9.js.map",
-    "static/js/2.4e957874.chunk.js": "/CharitySystem/static/js/2.4e957874.chunk.js",
-    "static/js/2.4e957874.chunk.js.map": "/CharitySystem/static/js/2.4e957874.chunk.js.map",
-    "index.html": "/CharitySystem/index.html",
-    "static/css/main.af41ec72.chunk.css.map": "/CharitySystem/static/css/main.af41ec72.chunk.css.map",
-    "static/js/2.4e957874.chunk.js.LICENSE.txt": "/CharitySystem/static/js/2.4e957874.chunk.js.LICENSE.txt"
+    "main.css": "/CharitySystem/index.html/static/css/main.af41ec72.chunk.css",
+    "main.js": "/CharitySystem/index.html/static/js/main.27942524.chunk.js",
+    "main.js.map": "/CharitySystem/index.html/static/js/main.27942524.chunk.js.map",
+    "runtime-main.js": "/CharitySystem/index.html/static/js/runtime-main.8b2a33d3.js",
+    "runtime-main.js.map": "/CharitySystem/index.html/static/js/runtime-main.8b2a33d3.js.map",
+    "static/js/2.e4d1ca9a.chunk.js": "/CharitySystem/index.html/static/js/2.e4d1ca9a.chunk.js",
+    "static/js/2.e4d1ca9a.chunk.js.map": "/CharitySystem/index.html/static/js/2.e4d1ca9a.chunk.js.map",
+    "index.html": "/CharitySystem/index.html/index.html",
+    "static/css/main.af41ec72.chunk.css.map": "/CharitySystem/index.html/static/css/main.af41ec72.chunk.css.map",
+    "static/js/2.e4d1ca9a.chunk.js.LICENSE.txt": "/CharitySystem/index.html/static/js/2.e4d1ca9a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.42806fc9.js",
-    "static/js/2.4e957874.chunk.js",
+    "static/js/runtime-main.8b2a33d3.js",
+    "static/js/2.e4d1ca9a.chunk.js",
     "static/css/main.af41ec72.chunk.css",
-    "static/js/main.ce679f6d.chunk.js"
+    "static/js/main.27942524.chunk.js"
   ]
 }
