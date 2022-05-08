@@ -21,36 +21,38 @@ function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            className="collapse navbar-collapse d-flex flex-row-reverse"
+            className="collapse navbar-collapse flex-row-reverse"
             id="navbarNavDropdown"
           >
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/CharityProjects">
-                  Charity Projects
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/stores">
-                  Stores
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/donors">
-                  Donors List
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/products">
-                  Products Available
-                </Link>
-              </li>
-            </ul>
+            <div className="d-flex">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to="">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/CharityProjects">
+                    Charity Projects
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/stores">
+                    Stores
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/donors">
+                    Donors List
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/products">
+                    Products Available
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
