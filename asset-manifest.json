@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/CharitySystem/index.html/static/css/main.af41ec72.chunk.css",
-    "main.js": "/CharitySystem/index.html/static/js/main.8cdf38b9.chunk.js",
-    "main.js.map": "/CharitySystem/index.html/static/js/main.8cdf38b9.chunk.js.map",
-    "runtime-main.js": "/CharitySystem/index.html/static/js/runtime-main.18de5975.js",
-    "runtime-main.js.map": "/CharitySystem/index.html/static/js/runtime-main.18de5975.js.map",
-    "static/js/2.14879405.chunk.js": "/CharitySystem/index.html/static/js/2.14879405.chunk.js",
-    "static/js/2.14879405.chunk.js.map": "/CharitySystem/index.html/static/js/2.14879405.chunk.js.map",
-    "index.html": "/CharitySystem/index.html/index.html",
-    "static/css/main.af41ec72.chunk.css.map": "/CharitySystem/index.html/static/css/main.af41ec72.chunk.css.map",
-    "static/js/2.14879405.chunk.js.LICENSE.txt": "/CharitySystem/index.html/static/js/2.14879405.chunk.js.LICENSE.txt"
+    "main.css": "/CharitySystem/static/css/main.af41ec72.chunk.css",
+    "main.js": "/CharitySystem/static/js/main.8cdf38b9.chunk.js",
+    "main.js.map": "/CharitySystem/static/js/main.8cdf38b9.chunk.js.map",
+    "runtime-main.js": "/CharitySystem/static/js/runtime-main.37fa47a7.js",
+    "runtime-main.js.map": "/CharitySystem/static/js/runtime-main.37fa47a7.js.map",
+    "static/js/2.9d5cd846.chunk.js": "/CharitySystem/static/js/2.9d5cd846.chunk.js",
+    "static/js/2.9d5cd846.chunk.js.map": "/CharitySystem/static/js/2.9d5cd846.chunk.js.map",
+    "index.html": "/CharitySystem/index.html",
+    "static/css/main.af41ec72.chunk.css.map": "/CharitySystem/static/css/main.af41ec72.chunk.css.map",
+    "static/js/2.9d5cd846.chunk.js.LICENSE.txt": "/CharitySystem/static/js/2.9d5cd846.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.18de5975.js",
-    "static/js/2.14879405.chunk.js",
+    "static/js/runtime-main.37fa47a7.js",
+    "static/js/2.9d5cd846.chunk.js",
     "static/css/main.af41ec72.chunk.css",
     "static/js/main.8cdf38b9.chunk.js"
   ]
