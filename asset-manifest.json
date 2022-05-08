@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/CharitySystem/static/css/main.af41ec72.chunk.css",
-    "main.js": "/CharitySystem/static/js/main.42a28ce5.chunk.js",
-    "main.js.map": "/CharitySystem/static/js/main.42a28ce5.chunk.js.map",
+    "main.js": "/CharitySystem/static/js/main.ce679f6d.chunk.js",
+    "main.js.map": "/CharitySystem/static/js/main.ce679f6d.chunk.js.map",
     "runtime-main.js": "/CharitySystem/static/js/runtime-main.42806fc9.js",
     "runtime-main.js.map": "/CharitySystem/static/js/runtime-main.42806fc9.js.map",
-    "static/js/2.f6a10a32.chunk.js": "/CharitySystem/static/js/2.f6a10a32.chunk.js",
-    "static/js/2.f6a10a32.chunk.js.map": "/CharitySystem/static/js/2.f6a10a32.chunk.js.map",
+    "static/js/2.4e957874.chunk.js": "/CharitySystem/static/js/2.4e957874.chunk.js",
+    "static/js/2.4e957874.chunk.js.map": "/CharitySystem/static/js/2.4e957874.chunk.js.map",
     "index.html": "/CharitySystem/index.html",
     "static/css/main.af41ec72.chunk.css.map": "/CharitySystem/static/css/main.af41ec72.chunk.css.map",
-    "static/js/2.f6a10a32.chunk.js.LICENSE.txt": "/CharitySystem/static/js/2.f6a10a32.chunk.js.LICENSE.txt"
+    "static/js/2.4e957874.chunk.js.LICENSE.txt": "/CharitySystem/static/js/2.4e957874.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.42806fc9.js",
-    "static/js/2.f6a10a32.chunk.js",
+    "static/js/2.4e957874.chunk.js",
     "static/css/main.af41ec72.chunk.css",
-    "static/js/main.42a28ce5.chunk.js"
+    "static/js/main.ce679f6d.chunk.js"
   ]
 }
