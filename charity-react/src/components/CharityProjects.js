@@ -12,10 +12,10 @@ function CharityProjects(props) {
         };
         const intervalId = setInterval(() => {
             loadContractFunctions();
-        }, 1000 * 0) // in milliseconds
+        }, 1000 * 20) // in milliseconds
         return () => clearInterval(intervalId)
 
-    });
+    },[charityProjects]);
     return (
         <div className="row">
             {charityProjects.map((charityProject) => (

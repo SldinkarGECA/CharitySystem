@@ -1,32 +1,36 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import charity from "../charity";
 import DonorCard from "./DonorCard";
 
 function Donors(props) {
-    const [donors, setDonors] = useState([]);
+  const [donors, setDonors] = useState([]);
 
-    useEffect(() => {
-        const loadContractFunctions = async () => {
-            setDonors(await charity.methods.getDonators().call());
-            console.log(donors);
-        };
-        loadContractFunctions();
-    });
+  useEffect(() => {
+    const loadContractFunctions = async () => {
+      setDonors(await charity.methods.getDonators().call());
+      console.log(donors);
+    };
+    loadContractFunctions();
+    const intervalId = setInterval(() => {
+      loadContractFunctions();
+    }, 1000 * 20); // in milliseconds
+    return () => clearInterval(intervalId);
+  });
 
-    return (
-        <div className="row">
-            <h2>Donors of our platform are:</h2>
-            {donors.map((prod) => (
-                <DonorCard
-                    key={prod["donatorName"]}
-                    donatorName={prod["donatorName"]}
-                    donatorMessage={prod["donatorMessage"]}
-                    donatedValue={prod["donatedValue"]}
-                    donatorAddress={prod["donatorAddress"]}
-                />
-            ))}
-        </div>
-    );
+  return (
+    <div className="row">
+      <h2>Donors of our platform are:</h2>
+      {donors.map((prod) => (
+        <DonorCard
+          key={prod["donatorName"]}
+          donatorName={prod["donatorName"]}
+          donatorMessage={prod["donatorMessage"]}
+          donatedValue={prod["donatedValue"]}
+          donatorAddress={prod["donatorAddress"]}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default Donors;

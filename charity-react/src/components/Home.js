@@ -14,6 +14,10 @@ function Home(props) {
             console.log(_manager);
         };
         loadContractFunctions();
+        const intervalId = setInterval(() => {
+            loadContractFunctions();
+        }, 1000 * 20) // in milliseconds
+        return () => clearInterval(intervalId)
     });
 
     const navigate = useNavigate();
