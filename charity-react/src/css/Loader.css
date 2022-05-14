@@ -1,0 +1,59 @@
+body{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    background-color: #ffffff;
+}
+.progress{
+    position: relative;
+    height: 10px;
+    width: 30%;
+    border: 3px solid #000000;
+    border-radius: 15px;
+    align-items: center;
+}
+.progress .color{
+    position: absolute;
+    background-color: #1338be;
+    width: 0px;
+    height: 10px;
+    border-radius: 15px;
+    animation: progres 10s infinite linear;    
+}
+
+@keyframes progres{
+    0%{
+      width: 0%;
+    }
+    10%{
+        width: 10%;
+    }
+    20%{
+        width: 20%;
+    }
+    30%{
+        width: 30%;
+    }
+    40%{
+        width: 40%;
+    }
+    50%{
+      width: 50%;
+    }
+    60%{
+        width: 60%;
+    }
+    70%{
+        width: 70%;
+    }
+    80%{
+        width: 80%;
+    }
+    90%{
+        width: 90%;
+    }
+    100%{
+        width: 100%;
+    }
+}
