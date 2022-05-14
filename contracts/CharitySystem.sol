@@ -13,9 +13,8 @@ contract CharitySystem {
     struct Donator {
         string donatorName;
         string donatorMessage;
-        uint256 projectID;
-        uint256 donatedValue;
-        // uint account_balance;
+        uint256 amountDonated;
+        uint256 donationValue;
         address donatorAddress;
     }
 
@@ -24,6 +23,7 @@ contract CharitySystem {
         string title;
         string description;
         uint256 maxContr;
+        uint256 collectedAmount;
         address payable store;
         bool complete;
         uint256 approvalCount;
@@ -94,6 +94,7 @@ contract CharitySystem {
                 "Sample Project Meal",
                 "Mission: 10 Million Meals is an endeavor to deliver 10 million mid-day meals to school children in one year. All it takes is 2,000 donors commiting to donate 2000 every month and 43,000 hungry children can be fed one hot meal every school day  in 19 states across India.",
                 300,
+                0,
                 payable(msg.sender),
                 false,
                 1,
@@ -106,6 +107,7 @@ contract CharitySystem {
                 "Sample Project Education",
                 "Education is fundamental right for all children, but girls from impoverished, illiterate families are mostly denied this right in India. By the time they reach adolescence, 40% are out of school, kept at home doing ghousehold chores. Join Mission: Every Girl in School and support the education of thousands of girls. 600/month can make a huge difference to one girl life.",
                 300,
+                0,
                 payable(msg.sender),
                 false,
                 1,
@@ -118,6 +120,7 @@ contract CharitySystem {
                 "Sample Mission Oxygen",
                 "Mission Oxygen is an initiative of the Democratic People Foundation. We have partnered with United Way India to enable people from outside India to contribute to the cause.",
                 300,
+                0,
                 payable(msg.sender),
                 false,
                 1,
@@ -125,6 +128,7 @@ contract CharitySystem {
                 true
             )
         );
+        donators.push(Donator("Sandesh","Hi I am from Team Charity System",0,10,msg.sender));
     }
 
     //CHARITY ORG METHODS
@@ -163,28 +167,34 @@ contract CharitySystem {
     ) public returns (uint256) {
         //constructor
         Donator memory d = Donator({
-        donatorName : _donatorName,
-        donatorMessage : _donatorMessage,
-        projectID : 1,
-        donatedValue : 10,
-        donatorAddress : msg.sender
+            donatorName: _donatorName,
+            donatorMessage: _donatorMessage,
+            amountDonated: 0,
+            donationValue: 10,
+            donatorAddress: msg.sender
         });
         donators.push(d);
-        // return donators.length - 1;
+        return donators.length - 1;
     }
 
-    function make_donations(uint256 id) public payable {
-        charityOrgs[0].OrgAddress.transfer(donators[id].donatedValue);
+    function make_donations(uint256 id,uint256 amount) public returns(uint256) {
+        uint256 success=0;
+        if(beneficiaries[id].maxContr > beneficiaries[id].collectedAmount+amount)
+        {
+            beneficiaries[id].maxContr = beneficiaries[id].maxContr-amount;
+        beneficiaries[id].collectedAmount = beneficiaries[id].collectedAmount+amount;
+        for (uint i = 0; i < donators.length; i++) {
+            if(donators[i].donatorAddress==msg.sender)
+            {
+                donators[i].amountDonated = donators[i].amountDonated+amount;
+            }
+        }
+        success=1;
+        }
+        return success;
+        
     }
 
-    function selectCharityProject(
-        uint256 id,
-        uint256 _projectId,
-        uint256 value
-    ) public {
-        if (_projectId != 999) donators[id].projectID = _projectId;
-        if (value > 0) donators[id].donatedValue = value;
-    }
 
     function getDonators() public view returns (Donator[] memory) {
         return donators;
@@ -211,6 +221,7 @@ contract CharitySystem {
         newRequest.title = title;
         newRequest.description = description;
         newRequest.maxContr = maxContr;
+        newRequest.collectedAmount = 0;
         newRequest.store = payable(msg.sender);
         newRequest.complete = false;
         newRequest.approvalCount = 0;
