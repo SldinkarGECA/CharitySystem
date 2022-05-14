@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import charity from "../charity";
 
-function CreateDonator(props) {
+function CreateCharityProject(props) {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -18,9 +18,13 @@ function CreateDonator(props) {
     }
     console.log(inputs);
     await charity.methods
-      .create_donator(inputs["_donatorName"], inputs["_donatorMessage"])
+      .createRequest(
+        inputs["_donatorTitle"],
+        inputs["_donatorMessage"],
+        inputs["_donatorAmount"]
+      )
       .send({ from: manager, gas: "6721975" });
-      alert("Added successfully");
+    alert("Added successfully");
   };
 
   return (
@@ -28,22 +32,22 @@ function CreateDonator(props) {
       <form onSubmit={handleSubmit} className="col-sm-12 col-lg-6">
         <br />
         <br />
-        <h3>Become A Donator on our platform!</h3>
+        <h3>Add your Request here:</h3>
         <div className="form-group">
-          <label>Name:</label>
+          <label>Title:</label>
           <br />
           <input
             type="text"
             className="form-control"
-            name="_donatorName"
-            value={inputs._donatorName || ""}
+            name="_donatorTitle"
+            value={inputs._donatorTitle || ""}
             onChange={handleChange}
-            placeholder="Enter your name"
+            placeholder="Enter your Title"
           />
           <br />
         </div>
         <div className="form-group" onSubmit={handleSubmit}>
-          <label>About Yourself:</label>
+          <label>Description:</label>
           <br />
           <input
             type="text"
@@ -51,12 +55,25 @@ function CreateDonator(props) {
             name="_donatorMessage"
             value={inputs._donatorMessage || ""}
             onChange={handleChange}
-            placeholder="Enter about yourselves.."
+            placeholder="Enter Description..."
+          />
+        </div>
+        <br />
+        <div className="form-group" onSubmit={handleSubmit}>
+          <label>maxContr:</label>
+          <br />
+          <input
+            type="text"
+            className="form-control"
+            name="_donatorAmount"
+            value={inputs._donatorAmount || ""}
+            onChange={handleChange}
+            placeholder="Enter Amount"
           />
         </div>
         <br />
         <button type="submit" className="btn btn-primary">
-          Become Donator
+          Create Request
         </button>
         <br />
         <br />
@@ -65,4 +82,4 @@ function CreateDonator(props) {
   );
 }
 
-export default CreateDonator;
+export default CreateCharityProject;

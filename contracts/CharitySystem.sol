@@ -128,7 +128,15 @@ contract CharitySystem {
                 true
             )
         );
-        donators.push(Donator("Sandesh","Hi I am from Team Charity System",0,10,msg.sender));
+        donators.push(
+            Donator(
+                "Sandesh",
+                "Hi I am from Team Charity System",
+                0,
+                10,
+                msg.sender
+            )
+        );
     }
 
     //CHARITY ORG METHODS
@@ -177,24 +185,27 @@ contract CharitySystem {
         return donators.length - 1;
     }
 
-    function make_donations(uint256 id,uint256 amount) public returns(uint256) {
-        uint256 success=0;
-        if(beneficiaries[id].maxContr > beneficiaries[id].collectedAmount+amount)
-        {
-            beneficiaries[id].maxContr = beneficiaries[id].maxContr-amount;
-        beneficiaries[id].collectedAmount = beneficiaries[id].collectedAmount+amount;
-        for (uint i = 0; i < donators.length; i++) {
-            if(donators[i].donatorAddress==msg.sender)
-            {
-                donators[i].amountDonated = donators[i].amountDonated+amount;
+    function make_donations(uint256 id, uint256 amount)
+        public
+        returns (uint256)
+    {
+        uint256 success = 0;
+        if (beneficiaries[id].maxContr >= amount) {
+            beneficiaries[id].maxContr = beneficiaries[id].maxContr - amount;
+            beneficiaries[id].collectedAmount =
+                beneficiaries[id].collectedAmount +
+                amount;
+            for (uint256 i = 0; i < donators.length; i++) {
+                if (donators[i].donatorAddress == msg.sender) {
+                    donators[i].amountDonated =
+                        donators[i].amountDonated +
+                        amount;
+                }
             }
-        }
-        success=1;
+            success = 1;
         }
         return success;
-        
     }
-
 
     function getDonators() public view returns (Donator[] memory) {
         return donators;
@@ -217,16 +228,18 @@ contract CharitySystem {
         string memory description,
         uint256 maxContr
     ) public {
-        Beneficiary storage newRequest = beneficiaries.push();
-        newRequest.title = title;
-        newRequest.description = description;
-        newRequest.maxContr = maxContr;
-        newRequest.collectedAmount = 0;
-        newRequest.store = payable(msg.sender);
-        newRequest.complete = false;
-        newRequest.approvalCount = 0;
-        newRequest.approved = false;
-        newRequest.display = false;
+        Beneficiary memory ben = Beneficiary({
+            title: title,
+            description: description,
+            maxContr: maxContr,
+            collectedAmount: 0,
+            store: payable(msg.sender),
+            complete: false,
+            approvalCount: 0,
+            approved: false,
+            display: false
+        });
+        beneficiaries.push(ben);
     }
 
     function approveRequest(uint256 index) public {

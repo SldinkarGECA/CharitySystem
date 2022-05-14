@@ -33,6 +33,7 @@ function Donors(props) {
           donatorMessage={prod["donatorMessage"]}
           donatedValue={prod["donatedValue"]}
           donatorAddress={prod["donatorAddress"]}
+          amountDonated = {prod["amountDonated"]}
         />
       ))}
     </div>
