@@ -27,10 +27,10 @@ function Home(props) {
     navigate("/CharityProjects");
   };
   const storePage = () => {
-    navigate("/store");
+    navigate("/stores");
   };
-  const beneficiariesPage = () => {
-    navigate("/beneficiaries");
+  const donors = () => {
+    navigate("/donors");
   };
 
   return (
@@ -59,7 +59,7 @@ function Home(props) {
           description="To display the entire list of Beneficiaries who have registered on the website for help of any kind, needed on a daily basis"
           title="For all Beneficiaries info"
           button="Beneficiaries"
-          onClick={beneficiariesPage}
+          onClick={donors}
         />
       </div>
       <h6>Manager is {manager}</h6>

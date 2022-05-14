@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import CharityProjects from "./CharityProjects";
+import Products from "./Products";
+import Home from "./Home";
+import Stores from "./Stores";
+import Donors from "./Donors";
 
 function Navbar(props) {
   return (
@@ -57,6 +62,15 @@ function Navbar(props) {
         </div>
       </nav>
       {props.children}
+
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route exact path="/CharityProjects" element={<CharityProjects />} />
+        <Route exact path="/donors" element={<Donors />} />
+        <Route exact path="/products" element={<Products />} />
+        <Route exact path="/stores" element={<Stores />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </Router>
   );
 }
