@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address = "0x418a71BFEB9C9e820C1Ad67d2896F2053b640BF3";
+const address = "0x0F5dE9CB834c7cd88bB0C32189288400Ed78DD8b";
 const abi = [
   {
     inputs: [],
@@ -35,14 +35,6 @@ const abi = [
     stateMutability: "nonpayable",
     type: "function",
     signature: "0x635c987f",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "index", type: "uint256" }],
-    name: "RequestMoneyAfterCompletion",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-    signature: "0x7d6e6ac8",
   },
   {
     inputs: [{ internalType: "uint256", name: "id", type: "uint256" }],
@@ -303,6 +295,28 @@ const abi = [
   },
   {
     inputs: [],
+    name: "getPayments",
+    outputs: [
+      {
+        components: [
+          { internalType: "string", name: "description", type: "string" },
+          { internalType: "uint256", name: "amount", type: "uint256" },
+          { internalType: "string", name: "sender", type: "string" },
+          { internalType: "string", name: "receiver", type: "string" },
+          { internalType: "bool", name: "completed", type: "bool" },
+        ],
+        internalType: "struct CharitySystem.Payment[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+    constant: true,
+    signature: "0xd56bd142",
+  },
+  {
+    inputs: [],
     name: "getProducts",
     outputs: [
       {
@@ -358,7 +372,8 @@ const abi = [
     outputs: [
       { internalType: "string", name: "description", type: "string" },
       { internalType: "uint256", name: "amount", type: "uint256" },
-      { internalType: "address payable", name: "receiver", type: "address" },
+      { internalType: "string", name: "sender", type: "string" },
+      { internalType: "string", name: "receiver", type: "string" },
       { internalType: "bool", name: "completed", type: "bool" },
     ],
     stateMutability: "view",

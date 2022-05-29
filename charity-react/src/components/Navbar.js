@@ -5,6 +5,7 @@ import Products from "./Products";
 import Home from "./Home";
 import Stores from "./Stores";
 import Donors from "./Donors";
+import Payments from "./Payments";
 
 function Navbar(props) {
   return (
@@ -42,18 +43,23 @@ function Navbar(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/stores">
-                    Stores
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to="/donors">
                     Donors List
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/stores">
+                    Stores List
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/products">
                     Products Available
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/payments">
+                    Recent Payments
                   </Link>
                 </li>
               </ul>
@@ -69,6 +75,7 @@ function Navbar(props) {
         <Route exact path="/donors" element={<Donors />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/stores" element={<Stores />} />
+        <Route exact path="/payments" element={<Payments />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>

@@ -42,7 +42,8 @@ contract CharitySystem {
     struct Payment {
         string description;
         uint256 amount;
-        address payable receiver;
+        string sender;
+        string receiver;
         bool completed;
     }
 
@@ -151,7 +152,7 @@ contract CharitySystem {
         if (msg.sender == charityOrgs[0].OrgAddress) {
             // pay money to benficiary
             // Project goal to be implemented
-            payments[id].receiver.transfer(payments[id].amount);
+            // payments[id].receiver.transfer(payments[id].amount);
             payments[id].completed = true;
         }
     }
@@ -195,16 +196,25 @@ contract CharitySystem {
             beneficiaries[id].collectedAmount =
                 beneficiaries[id].collectedAmount +
                 amount;
+            string memory donator = "";
             for (uint256 i = 0; i < donators.length; i++) {
                 if (donators[i].donatorAddress == msg.sender) {
                     donators[i].amountDonated =
                         donators[i].amountDonated +
                         amount;
+                    donator = donators[i].donatorName;
                 }
             }
             success = 1;
+            payments.push(
+                Payment(beneficiaries[id].title, amount, donator, beneficiaries[id].title, true)
+            );
         }
         return success;
+    }
+
+    function getPayments() public view returns (Payment[] memory) {
+        return payments;
     }
 
     function getDonators() public view returns (Donator[] memory) {
@@ -259,17 +269,17 @@ contract CharitySystem {
         request.complete = true;
     }
 
-    function RequestMoneyAfterCompletion(uint256 index) public {
-        Beneficiary storage request = beneficiaries[index];
-        require(request.approvalCount > approversCount / 2);
-        Payment memory p = Payment(
-            request.description,
-            request.maxContr,
-            payable(msg.sender),
-            true
-        );
-        payments.push(p);
-    }
+    // function RequestMoneyAfterCompletion(uint256 index) public {
+    //     Beneficiary storage request = beneficiaries[index];
+    //     require(request.approvalCount > approversCount / 2);
+    //     // Payment memory p = Payment(
+    //     //     request.description,
+    //     //     request.maxContr,
+    //     //     payable(msg.sender),
+    //     //     true
+    //     // );
+    //     payments.push(p);
+    // }
 
     function getBeneficiaries() public view returns (Beneficiary[] memory) {
         return beneficiaries;

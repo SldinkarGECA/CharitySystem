@@ -5,8 +5,8 @@ const {abi, evm} = require("./compile");
 
 
 const provider = new HDWalletProvider(
-    // "grunt scan gravity boring cruise exhaust demise smile zone easily denial forest",
-    "second license daughter nasty west life mandate laugh neutral mother assume case",
+    "grunt scan gravity boring cruise exhaust demise smile zone easily denial forest",
+    // "second license daughter nasty west life mandate laugh neutral mother assume case",
     "wss://rinkeby.infura.io/ws/v3/51b2c9997e7a407a98ed41bd6ff16ba8"
 );
 

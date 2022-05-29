@@ -11,7 +11,7 @@ function ProductCard(props) {
                     {/*<p className="card-text">Seller: {props.seller}</p>*/}
                     <div className="card-footer bg-transparent border-success">
                         <div className="d-grid d-md-flex justify-content-center">
-                            <button type="button" className="btn btn-info btn-lg ">
+                            <button type="button" className="btn btn-info btn-lg " disabled>
                                 Buy Now!
                             </button>
                         </div>

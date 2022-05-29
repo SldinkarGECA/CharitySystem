@@ -32,7 +32,9 @@ function Home(props) {
   const donors = () => {
     navigate("/donors");
   };
-
+  const payments = () => {
+    navigate("/payments");
+  };
   return (
     <div className="text-center">
       <br />
@@ -60,6 +62,14 @@ function Home(props) {
           title="For all Beneficiaries info"
           button="Beneficiaries"
           onClick={donors}
+        />
+      </div>
+      <div className="d-flex justify-content-center">
+        <HomeCard
+          description="To display the entire list of payments recorded on the blockchain"
+          title="Recent Payments"
+          button="Payments"
+          onClick={payments}
         />
       </div>
       <h6>Manager is {manager}</h6>
